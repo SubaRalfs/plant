@@ -18,10 +18,10 @@
         </tr>
     </table>
     <script>
-        const fs = require('fs');
-      
         window.addEventListener('load', getReadings);
         moisture.addEventListener('click', getReadings);
+        
+        const fs = require('fs');
 
         function getReadings(){
             document.getElementById("moisture").innerHTML = "Data who?";
