@@ -24,12 +24,13 @@
         moisture.addEventListener('click', getReadings);
 
         function getReadings(){
+            document.getElementById("moisture").innerHTML = "Data who?";
             fs.readFile('data.csv', 'uft8', (err, data) => {
               if(err){
                 document.getElementById("moisture").innerHTML = "error";
                 return;
               }
-              document.getElementById("moisture").innerHTML = data + "%"
+              document.getElementById("moisture").innerHTML = data + "%";
             }); 
         }
     </script>
