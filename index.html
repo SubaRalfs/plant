@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil moisture</title>
+    <style>
+        table.center {
+          margin-left: auto; 
+          margin-right: auto;
+        }
+        </style>
+</head>
+<body>
+    <table class="center">
+        <tr>
+            <td><p style="font-size:5vw;">The soil moisture is:</p></td>
+            <td><p id="moisture"style="font-size:5vw;"><em>Waiting for data</em></p></td>
+        </tr>
+    </table>
+    <script>
+        const fs = require('fs');
+      
+        window.addEventListener('load', getReadings);
+        moisture.addEventListener('click', getReadings);
+
+        function getReadings(){
+            fs.readFile('data.csv', 'uft8', (err, data) => {
+              if(err){
+                document.getElementById("moisture").innerHTML = "error";
+                return;
+              }
+              document.getElementById("moisture").innerHTML = data + "%"
+            }); 
+        }
+    </script>
+</body>
